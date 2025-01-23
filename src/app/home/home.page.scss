@@ -25,3 +25,11 @@
 #container a {
   text-decoration: none;
 }
+
+ion-button {
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  --background: #007bff;
+  --border-radius: 8px;
+}

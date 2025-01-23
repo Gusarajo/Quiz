@@ -1,11 +1,59 @@
 <ion-header [translucent]="true">
 
-  <ion-title>
-    Quiz
+  <ion-title style="font-size: 100px; text-align: center; border-bottom: 1px black solid;">
+    Creación de eventos
   </ion-title>
 
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <ion-list>
+    <ion-item>
+      <ion-input [formControl]="NombreE" label="Nombre del evento:"
+        placeholder="ingresa el nombre del evento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [formControl]="Nombre" label="Nombre de encargado:"
+        placeholder="ingresa el nombre del encargado"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" [formControl]="Numero" label="Numero:"
+        placeholder="ingresa el numero de telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [formControl]="ubicacion" label="Ubicación del evento:" placeholder="ingresa la ubicación"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="date" [formControl]="FechaI" label="Fecha de inicio del evento:"
+        placeholder="ingresa la fecha de inicio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="date" [formControl]="FechaF" label="Fecha final del evento:"
+        placeholder="ingresa la fecha de fin"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="buttonclick()">Agregar</ion-button>
+  <div>
+    <h1 style="text-align: center; margin-top: 50px;">Tus eventos</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col>Nombre del evento</ion-col>
+        <ion-col>Nombre del encargado</ion-col>
+        <ion-col> Numero telefonico</ion-col>
+        <ion-col> Ubicación</ion-col>
+        <ion-col>Fecha de inicio</ion-col>
+        <ion-col> Fecha final</ion-col>
+        <ion-col>¿Completado?</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let task of tasks">
+        <ion-col>{{ task.nombreE }}</ion-col>
+        <ion-col> {{ task.nombre }}</ion-col>
+        <ion-col> {{ task.numero }}</ion-col>
+        <ion-col> {{ task.Ubicacion }}</ion-col>
+        <ion-col> {{ task.fechaI }}</ion-col>
+        <ion-col> {{ task.fechaF }}</ion-col>
+        <ion-col> <ion-checkbox>completado</ion-checkbox></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
